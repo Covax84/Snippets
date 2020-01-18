@@ -38,3 +38,27 @@ def display_with_args(name: str, age: int):
 
 
 display_with_args('Covax', 35)
+
+
+# 3) example of decorator class:
+class DecoratorClass(object):
+    def __init__(self, original_function):
+        self.original_function = original_function
+
+    def __call__(self, *args, **kwargs):
+        print('call method executed this before "{}"'.format(self.original_function.__name__))
+        return self.original_function(*args, **kwargs)
+
+
+@DecoratorClass
+def display_with_args(name: str, age: int):
+    print('display function executed with arguments: Name is {}, age is {}'.format(name, age))
+
+
+@DecoratorClass
+def display():
+    print('display function with no args executed with @DecoratorClass')
+
+
+display_with_args('Covax84', 35)
+display()
