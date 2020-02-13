@@ -14,4 +14,17 @@ class InfiniteSquaring:
         самого себя, тем самым в точности реализуя протокол итератора.
         """
         return self
-        
+
+
+# >>> squaring_of_six = InfiniteSquaring(6)
+# >>> next(squaring_of_six)
+# 36
+# >>> next(squaring_of_six)
+# 1296
+# >>> next(squaring_of_six)
+# 1679616
+# >>> next(squaring_of_six)
+# 2821109907456
+# >>> next(squaring_of_six)
+# 7958661109946400884391936
+# И так до бесконечности...        
